@@ -11,13 +11,8 @@
 </head>
 <body>
 	<div class="center-content">
-		<h1 class="logo">JBlog</h1>
-		<ul class="menu">
-			<li><a href="">로그인</a></li>
-			<li><a href="">회원가입</a></li>
-			<li><a href="">로그아웃</a></li>
-			<li><a href="">내블로그</a></li>
-		</ul>
+		<c:import url="/WEB-INF/views/includes/menu.jsp" />
+		
 		<form class="search-form">
 			<fieldset>
 				<input type="text" name="keyword" />
@@ -29,6 +24,12 @@
 				<input type="radio" name="which" value="blog-user"> <label>블로거</label>
 			</fieldset>
 		</form>
+		
+		<ul style="text-align: left; margin-left: 50px;">
+			<c:forEach items="${userList }" var="vo" varStatus="status">
+				<li><a href="${pageContext.request.contextPath}/${vo.id}">${vo.id}</a></li>
+			</c:forEach>
+		</ul>
 	</div>
 </body>
 </html>
