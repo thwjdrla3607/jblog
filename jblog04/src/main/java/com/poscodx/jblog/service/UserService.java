@@ -16,6 +16,7 @@ public class UserService {
 	private UserRepository userRepository;
 	
 	public void join(@Valid UserVo userVo) {
+		System.out.println("5555555");
 		if (userRepository.check(userVo))
 			userRepository.insert(userVo);
 	}

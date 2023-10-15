@@ -5,10 +5,10 @@ public class BlogVo {
 	private String image;
 	private String blogId;
 
-	public BlogVo(String id) {
+	public BlogVo(String id, String title) {
 		this.blogId = id;
 	}
-
+	
 	public String getTitle() {
 		return title;
 	}

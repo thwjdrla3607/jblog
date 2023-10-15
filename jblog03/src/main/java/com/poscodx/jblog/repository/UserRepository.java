@@ -16,11 +16,12 @@ public class UserRepository {
 	private SqlSession sqlSession;
 	
 	public Boolean check(UserVo vo) {
-		String result = sqlSession.selectOne("user.insert", vo);
-		return result == null ? true : false;
+		String result = sqlSession.selectOne("user.check", vo);
+		return result == null ? false : true;
 	}
 	
 	public Boolean insert(UserVo vo) {
+		
 		int count = sqlSession.insert("user.insert", vo);
 		return count == 1;
 	}

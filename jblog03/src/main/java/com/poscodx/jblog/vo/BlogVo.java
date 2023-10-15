@@ -5,7 +5,9 @@ public class BlogVo {
 	private String image;
 	private String blogId;
 
-	public BlogVo(String id) {
+	public BlogVo(String id, String name) {
+		this.title = name + "'s Blog";
+		this.image = "";
 		this.blogId = id;
 	}
 

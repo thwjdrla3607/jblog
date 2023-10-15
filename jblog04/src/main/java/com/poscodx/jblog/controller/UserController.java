@@ -31,7 +31,7 @@ public class UserController {
 	
 	@RequestMapping(value="/join", method=RequestMethod.POST)
 	public String join(@ModelAttribute @Valid UserVo userVo, BindingResult result, Model model) {
-		//System.out.println("start");
+		System.out.println("start");
 		if (result.hasErrors()) {
 			//System.out.println("1");
 			model.addAllAttributes(result.getModel());
@@ -39,11 +39,12 @@ public class UserController {
 			return "user/join";
 		}
 		
-		//System.out.println("3");
+		System.out.println("before userService - join");
 		userService.join(userVo);
 		//System.out.println("4");
 		
 		BlogVo blogVo = new BlogVo(userVo.getId());
+		blogVo = new BlogVo(blogVo.getTitle());
 		blogService.addUser(blogVo);
 		return "redirect:/user/joinsuccess";
 	}

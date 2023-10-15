@@ -17,6 +17,9 @@ public class MainController {
 	
 	@RequestMapping("")
 	public String main(Model model) {
+		
+		System.out.println("main $$");
+		
 		List<UserVo> list = userService.getUserList();
 		model.addAttribute("userList", list);
 		return "main/index";

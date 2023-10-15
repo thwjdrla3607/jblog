@@ -3,7 +3,7 @@
 
 <mapper namespace="user">
    
-   <insert id="insert" parameterType="uservo">
+   <insert id="insert" parameterType="uservo" >
       <![CDATA[
       insert into user
       values (#{id }, #{name }, password(#{password}))
