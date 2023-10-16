@@ -31,20 +31,17 @@ public class UserController {
 	
 	@RequestMapping(value="/join", method=RequestMethod.POST)
 	public String join(@ModelAttribute @Valid UserVo userVo, BindingResult result, Model model) {
-		System.out.println("start");
 		if (result.hasErrors()) {
-			//System.out.println("1");
 			model.addAllAttributes(result.getModel());
-			//System.out.println("2");
 			return "user/join";
 		}
 		
-		System.out.println("before userService - join");
-		userService.join(userVo);
-		//System.out.println("4");
-		
-		BlogVo blogVo = new BlogVo(userVo.getId());
-		blogVo = new BlogVo(blogVo.getTitle());
+		if (!userService.join(userVo)) {
+			System.out.println("기존에 존재하는 id 입니다. 다른 id로 입력하세요");
+			model.addAllAttributes(result.getModel());
+			return "user/join";
+		}
+		BlogVo blogVo = new BlogVo(userVo.getName(), userVo.getId());
 		blogService.addUser(blogVo);
 		return "redirect:/user/joinsuccess";
 	}

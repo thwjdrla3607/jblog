@@ -15,10 +15,12 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public void join(@Valid UserVo userVo) {
-		System.out.println("5555555");
-		if (userRepository.check(userVo))
+	public boolean join(@Valid UserVo userVo) {
+		if (!userRepository.check(userVo)) {
 			userRepository.insert(userVo);
+			return true;
+		}
+		return false;
 	}
 
 	public UserVo getUser(String id, String password) {

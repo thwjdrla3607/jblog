@@ -5,10 +5,12 @@ public class BlogVo {
 	private String image;
 	private String blogId;
 
-	public BlogVo(String id, String title) {
+	public BlogVo(String id, String name) {
+		this.title = name + "'s Blog";
+		this.image = "";
 		this.blogId = id;
 	}
-	
+
 	public String getTitle() {
 		return title;
 	}
@@ -37,5 +39,4 @@ public class BlogVo {
 	public String toString() {
 		return "BlogVo [title=" + title + ", image=" + image + ", blogId=" + blogId + "]";
 	}
-
 }
