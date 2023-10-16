@@ -6,12 +6,14 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Calendar;
 
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.poscodx.jblog.exception.FileUploadServiceException;
 
 @Service
+@PropertySource("classpath:web/fileupload/fileupload.properties")
 public class FileUploadService {
 	private static String SAVE_PATH = "/jblog-uploads";
 	private static String URL_PATH = "/assets/upload-image";
