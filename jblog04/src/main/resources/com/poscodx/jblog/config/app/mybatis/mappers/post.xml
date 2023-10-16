@@ -12,16 +12,17 @@
 
 	<select id="findByNo" parameterType="string" resultType="postvo">
 		<![CDATA[
-		select post.no, title, contents, category_no as categoryNo, 
-		  	date_format(regdate, '%Y/%m/%d') as regDate
-		  from post join category
-		  	where category.no = post.category_no and
-		  category.blog_id = #{blogId}
-		  	order by post.regdate desc;
+			select post.no, title, contents, category_no as categoryNo, 
+      		date_format(regdate, '%Y/%m/%d') as regDate
+      		from post
+      		join category on category.no = post.category_no
+      		where category.blog_id = #{blogId}
+      		order by post.regdate desc;
 		]]>
 	</select>
 
-	<select id="findByNoOne" parameterType="string" resultType="postvo">
+	<select id="findByNoOne" parameterType="string"
+		resultType="postvo">
 		<![CDATA[
 		select no, title, contents, category_no as categoryNo, 
 		  	date_format(regdate, '%Y/%m/%d') as regDate
