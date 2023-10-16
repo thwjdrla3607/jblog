@@ -15,7 +15,7 @@ import com.poscodx.jblog.exception.FileUploadServiceException;
 @Service
 @PropertySource("classpath:web/fileupload/fileupload.properties")
 public class FileUploadService {
-	private static String SAVE_PATH = "/jblog-uploads";
+	private static String SAVE_PATH = "/jblog-uploads/upload-image";
 	private static String URL_PATH = "/assets/upload-image";
 	
 	public String restore(MultipartFile file) {

@@ -14,6 +14,7 @@
 	<groupId>com.poscodx</groupId>
 	<artifactId>jblog06</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -93,7 +94,7 @@
 
 	<build>
 		<finalName>jblog06</finalName>
-			<plugins>
+		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

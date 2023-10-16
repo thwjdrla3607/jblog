@@ -19,7 +19,7 @@ spring:
          
    web:
       resources:
-         static-locations: classpath:/assets/, file:/jblog-uploads     
+         static-locations: classpath:/assets/, file:/jblog-uploads    
    
    #multipart
    servlet:
