@@ -162,7 +162,7 @@ public class BlogController {
 	public String adminWrite(@PathVariable("id")String blogId,
 							@AuthUser UserVo userVo,
 							PostVo postVo,
-	                        @RequestParam(value="category", required=true, defaultValue="") String categoryNo,
+	                        @RequestParam(value="category", required=true, defaultValue="") int categoryNo,
 							Model model) {
 		if (!blogId.equals(userVo.getId())) {
 			return "main/index";
